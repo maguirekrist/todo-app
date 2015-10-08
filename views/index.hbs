@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<ul>
+  {{#each todos}}
+    {{#if completed}}
+      <li><strong><h2><strike>{{item}}</strike></h2></strong> <a href="/destroy/{{_id}}">delete</a></li>
+    {{else}}
+    <li><strong><h2>{{item}}</h2></strong> <a href="/destroy/{{_id}}">delete</a> // <a href="/complete/{{_id}}">Complete</a></li>
+    {{/if}}
+  {{/each}}
+<ul>
+<br>
+<form method="post">
+  <strong>New Todo:</strong> <input type="text" name="item">
+  <input type="submit" value="Add">
+</form>
